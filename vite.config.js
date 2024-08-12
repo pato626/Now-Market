@@ -6,7 +6,10 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['react-router-dom']
+      external: [
+        'react-router-dom',
+        'react-hook-form' 
+      ]
     }
   }
-})
+});
