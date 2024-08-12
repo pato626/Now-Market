@@ -1,6 +1,6 @@
-import Cart from "../assets/Cart.svg"
-import React, { useContext } from 'react'
-import { CartContext } from '../Context/CartContext'
+import Cart from "../assets/Cart.svg";
+import React, { useContext } from 'react';
+import { CartContext } from '../Context/CartContext';
 
 const CartWidget = () => {
 

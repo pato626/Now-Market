@@ -1,9 +1,9 @@
-import React from 'react'
-import Github from "../assets/Github.svg"
-import Linkedin from "../assets/Linkedin.svg"
-import Telephone from "../assets/Telephone.svg"
-import Gmail from "../assets/Gmail.svg"
-import { Link } from "react-router-dom"
+import React from 'react';
+import Github from "../assets/Github.svg";
+import Linkedin from "../assets/Linkedin.svg";
+import Telephone from "../assets/Telephone.svg";
+import Gmail from "../assets/Gmail.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (

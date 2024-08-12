@@ -1,5 +1,5 @@
-import React from 'react'
-import Search from "../assets/Search.png"
+import React from 'react';
+import Search from "../assets/Search.png";
 import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
