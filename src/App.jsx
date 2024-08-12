@@ -1,8 +1,8 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './components/Footer'
 import Inicio from './components/Inicio'
 import Navbar from './components/Navbar'
-import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Contacto from './components/Contacto'
 import ItemListContainer from './components/ItemListContainer'
 import Carrito from './components/Carrito'
