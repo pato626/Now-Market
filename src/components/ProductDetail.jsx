@@ -1,48 +1,48 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../Context/CartContext";
 
-
 const ProductDetail = ({ product }) => {
-
   const { carrito, agregarAlCarrito } = useContext(CartContext);
-  console.log(carrito);
   const [cantidad, setCantidad] = useState(1);
 
-
   const handleAddCount = () => {
-    setCantidad(cantidad + 1);
-
-  }
+    setCantidad((prevCantidad) => prevCantidad + 1);
+  };
 
   const handleRemoveCount = () => {
-    cantidad > 1 && setCantidad(cantidad - 1);
+    setCantidad((prevCantidad) => Math.max(prevCantidad - 1, 1));
+  };
 
-  }
-
+  const handleAddToCart = () => {
+    agregarAlCarrito(product, cantidad);
+  };
 
   return (
-    <div>
-      <div className="producto-detalle">
+    <div className="product-detail">
+      <div className="product-image">
         <img src={product.image} alt={product.title} />
-        <div> <p className="orden-detalle">{product.title} </p> <p className="orden-detalle"> Categoría: {product.category} </p>  </div>
-        <p className="orden-detalle">Precio: ${product.price}</p>
-        <p className="orden-detalle">{product.description}</p>
-        <div className="orden-detalle">
-
-          <button className="boton-cantidad" onClick={handleAddCount}>+</button>
-
-          <div className="boton-detalle">{cantidad} </div>
-
-          <button className="boton-cantidad" onClick={handleRemoveCount}>-</button>
-
-        </div>
-        <div className="agregar-carrito"> <button onClick={() => { agregarAlCarrito(product, cantidad) }}>Agregar al carrito</button> </div>
       </div>
-
-
-
+      <div className="product-info">
+        <h1 className="product-title">{product.title}</h1>
+        <p className="product-category">Categoría: {product.category}</p>
+        <p className="product-price">Precio: ${product.price}</p>
+        <p className="product-description">{product.description}</p>
+        <div className="quantity-control">
+          <button className="quantity-button" onClick={handleRemoveCount}>
+            -
+          </button>
+          <span className="quantity-display">{cantidad}</span>
+          <button className="quantity-button" onClick={handleAddCount}>
+            +
+          </button>
+        </div>
+        <button className="add-to-cart-button" onClick={handleAddToCart}>
+          Agregar al carrito
+        </button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductDetail
+export default ProductDetail;
+
